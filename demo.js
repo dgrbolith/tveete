@@ -1,7 +1,6 @@
-import fetch from "node-fetch"
+// import fetch from "node-fetch"
 var fs = require("fs");
 const { text } = require("stream/consumers");
-
 
 // var readLalo = fs.readFile('lalol.txt', function(err, data) {
 //     if (err) throw err;
@@ -22,10 +21,8 @@ const { text } = require("stream/consumers");
 
 //   let laloLength = lalOrray.length;
 //   let sentence = "";
-  
 
-  
-//   for(let i = 0; i <= girth; i++) { 
+//   for(let i = 0; i <= girth; i++) {
 //     const betweenZeroAndLalo = Math.random() * laloLength;
 //     const intBetweenZeroAndLalo = Math.floor(betweenZeroAndLalo);
 //     let jumblite = lalOrray[intBetweenZeroAndLalo];
@@ -33,52 +30,53 @@ const { text } = require("stream/consumers");
 //     if(i===0){
 //       jumblite = jumblite[0].toUpperCase() + jumblite.substring(1)
 //     }
-    
+
 //     sentence = sentence+jumblite;
 //     if (i <= (girth - 1)) sentence += " ";
 //   }
 
 //   return sentence + ".";
-  
+
 // }
 
 // const textArray = txtToProfit()
 
-// let thouArtJumbled = jmbleToProfit(textArray, 20) 
+// let thouArtJumbled = jmbleToProfit(textArray, 20)
 
 // // console.log(thouArtJumbled)
 
 // console.log(thouArtJumbled)
 
-
-//end goal: 
-// 1. read source text, 
+//end goal:
+// 1. read source text,
 // 2. mess it about
-// 3. twitter, 
-
+// 3. twitter,
 
 //construct ranom sentences from input text.
-        //non repeating
-        //entirely non repeating
+//non repeating
+//entirely non repeating
 //try to make it less random
-      //use dictionary api to figure out what kind of word it is?
-      //figure out how sentences do.
-      //more????
-      //profit
+//use dictionary api to figure out what kind of word it is?
+//figure out how sentences do.
+//more????
+//profit
 //posting to twitter
 //find source text
 //regret
 //denial
 
-
-
 ////figuringitout
 
 async function sucksTheCat() {
-  
-  const resultTheOfSuckedCat = fetch("https://api.dictionaryapi.dev/api/v2/entries/en/grape");
-  console.log(type(resultTheOfSuckedCat))
-  return resultTheOfSuckedCat
+  const resultTheOfSuckedCat = await fetch(
+    "https://api.dictionaryapi.dev/api/v2/entries/en/grape"
+  );
+  console.log(resultTheOfSuckedCat);
+  return resultTheOfSuckedCat.json();
 }
 
-console.log(sucksTheCat())
+sucksTheCat();
+// .then((data) => {
+//   console.log(data);
+//   console.log(data[0].meanings);
+// });
